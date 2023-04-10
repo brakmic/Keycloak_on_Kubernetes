@@ -1,0 +1,32 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: "{{ .Values.pv.name }}"
+  namespace: "{{ .Values.namespace }}"
+  labels:
+    type: local
+    app: postgres
+spec:
+  storageClassName: "standard"
+  capacity:
+    storage: "{{ .Values.pv.size }}"
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  hostPath:
+    path: "/mnt/data"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: "{{ .Values.pvc.name }}"
+  namespace: "{{ .Values.namespace }}"
+  labels:
+    app: postgres
+spec:
+  storageClassName: "standard"
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: "{{ .Values.pvc.size }}"
