@@ -1,6 +1,6 @@
 ## Keycloak on k8s
 
-Source code from the article on running Keycloak on k8s with Kind. The following packages have been used:
+Source code from the article on running Keycloak on k8s with Kind. The following packages and tools have been used:
 
 * Keycloak
 * PostgreSQL
