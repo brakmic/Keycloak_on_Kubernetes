@@ -5,7 +5,7 @@ metadata:
   namespace: "{{ .Values.namespace }}"
   labels:
     type: local
-    app: postgres
+    app: "{{ .Values.deployments.postgres.service.name }}"
 spec:
   storageClassName: "standard"
   capacity:
@@ -22,7 +22,7 @@ metadata:
   name: "{{ .Values.pvc.name }}"
   namespace: "{{ .Values.namespace }}"
   labels:
-    app: postgres
+    app: "{{ .Values.deployments.postgres.service.name }}"
 spec:
   storageClassName: "standard"
   accessModes:
