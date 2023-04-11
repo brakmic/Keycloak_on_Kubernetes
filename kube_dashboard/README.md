@@ -7,5 +7,4 @@
 * Open Dashboard on this [URL](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/).
 * Enter the token.
 
-![keycloak_deployment](../images/keycloak_deployment_in_k8s.png)
-Example view showing Keycloak and Postgres deployments.
+![kube_dashboard](../gifs/kubernetes_dashboard.gif)
