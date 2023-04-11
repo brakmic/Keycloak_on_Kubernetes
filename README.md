@@ -1,5 +1,7 @@
 ## Keycloak on k8s
 
+![keycloak_video](gifs/keycloak_postgres_on_k8s.gif)
+
 Source code from the [article on running Keycloak on k8s](https://blog.brakmic.com/keycloak-with-postgresql-on-kubernetes/). The following packages and tools have been used:
 
 * Keycloak
