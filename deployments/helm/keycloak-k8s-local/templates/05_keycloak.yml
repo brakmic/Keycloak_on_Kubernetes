@@ -56,21 +56,16 @@ spec:
               value: "true"
             - name: KC_LOG_LEVEL
               value: INFO
-            - name: DB_VENDOR
-              value: POSTGRES
-            - name: DB_ADDR
-              value: "{{ .Values.deployments.postgres.service.name }}"
-            - name: DB_DATABASE
-              valueFrom:
-                secretKeyRef:
-                  name: "{{ .Values.secrets.postgres.name }}"
-                  key: POSTGRES_DB
-            - name: DB_USER
+            - name: KC_DB
+              value: postgres
+            - name: KC_DB_URL
+              value: "jdbc:postgresql://{{ .Values.deployments.postgres.service.name }}/{{ .Values.deployments.postgres.db.name }}"
+            - name: KC_DB_USERNAME
               valueFrom:
                 secretKeyRef:
                   name: "{{ .Values.secrets.postgres.name }}"
                   key: POSTGRES_USER
-            - name: DB_PASSWORD
+            - name: KC_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: "{{ .Values.secrets.postgres.name }}"
